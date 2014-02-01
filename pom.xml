@@ -8,19 +8,41 @@
 	<name>Daily Snapshot Tool</name>
 
 	<scm>
-		<url>
-			https://github.com/Linosh/DailySnapshotTool
-		</url>
+		<url>https://github.com/Linosh/DailySnapshotTool</url>
 	</scm>
 
+	<build>
+		<finalName>DailySnapshotTool</finalName>
+	</build>
 
 	<dependencies>
+
+		<!-- Websckets dependencies -->
+
 		<dependency>
 			<groupId>javax.websocket</groupId>
 			<artifactId>javax.websocket-api</artifactId>
 			<version>1.0</version>
+			<scope>provided</scope>
 		</dependency>
 
+<!--
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>tomcat7-websocket</artifactId>
+			<version>7.0.50</version>
+			<scope>compile</scope>
+		</dependency>
+
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>compile</scope>
+		</dependency>
+-->
+		<!-- Utils dependencies -->
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
@@ -28,13 +50,23 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.12</version>
+		</dependency>
+
+		<!-- Tests dependencies -->
+		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
+			<version>4.11</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	<build>
-		<finalName>DailySnapshotTool</finalName>
-	</build>
 </project>

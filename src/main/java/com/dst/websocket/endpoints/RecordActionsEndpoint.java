@@ -1,6 +1,6 @@
-package com.dst.web.websocket;
+package com.dst.websocket.endpoints;
 
-import com.dst.web.eventbus.EventBusContext;
+import com.dst.eventbus.EventBusContext;
 import com.google.common.eventbus.Subscribe;
 
 import javax.websocket.*;
@@ -13,7 +13,7 @@ import java.io.IOException;
  * Date: 1/28/14
  */
 @ServerEndpoint(value = "/echo")
-public class EchoEndpointAnnotated {
+public class RecordActionsEndpoint {
 	private Session session;
 
 	@OnOpen
