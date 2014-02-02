@@ -9,10 +9,13 @@
 
 	<script src="js/jquery-2.0.3.js"></script>
 	<script src="js/jquery-ui/jquery-ui-1.10.4.custom.js"></script>
+	<script src="js/jsviews.js"></script>
+	<script src="js/DstUtils.js"></script>
 	<script src="js/records.js"></script>
 
 </head>
 <body>
+<jsp:include page="templates/record.jsp"/>
 <header>
 	<div id="title">
 		<div>Daily Snapshot Tool</div>

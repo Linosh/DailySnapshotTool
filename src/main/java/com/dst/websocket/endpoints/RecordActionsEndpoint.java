@@ -12,7 +12,7 @@ import java.io.IOException;
  * Author: Yermiichuk Dmitrii
  * Date: 1/28/14
  */
-@ServerEndpoint(value = "/echo")
+@ServerEndpoint(value = "/records")
 public class RecordActionsEndpoint {
 	private Session session;
 
@@ -29,7 +29,7 @@ public class RecordActionsEndpoint {
 	}
 
 	@OnMessage
-	public String echo(String message) {
+	public String onMsg(String message) {
 		return message + " (from your server)";
 	}
 
