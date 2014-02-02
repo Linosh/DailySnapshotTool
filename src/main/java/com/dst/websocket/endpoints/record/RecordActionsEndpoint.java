@@ -1,6 +1,12 @@
-package com.dst.websocket.endpoints;
+package com.dst.websocket.endpoints.record;
 
-import com.dst.eventbus.EventBusContext;
+import com.dst.websocket.messages.JsonMessage;
+import com.dst.websocket.messages.MessageDTO;
+import com.dst.websocket.pubsub.eventbus.EventBusContext;
+import com.dst.utils.JsonUtils;
+import com.dst.websocket.messages.record.RecordTypesMessage;
+import com.dst.websocket.rpc.request.processors.JsonMsgProcessor;
+import com.dst.websocket.rpc.request.processors.ProcessorsFactory;
 import com.google.common.eventbus.Subscribe;
 
 import javax.websocket.*;
@@ -24,13 +30,16 @@ public class RecordActionsEndpoint {
 	}
 
 	@Subscribe
-	public void sendMessage(String msg) throws IOException{
-		this.session.getBasicRemote().sendText(msg);
+	public void sendMessage(RecordTypesMessage msg) throws IOException {
+		this.session.getBasicRemote().sendText(msg.toJson());
 	}
 
 	@OnMessage
 	public String onMsg(String message) {
-		return message + " (from your server)";
+		MessageDTO dto = JsonUtils.fromJson(message);
+		JsonMsgProcessor proc = ProcessorsFactory.getProcessor(dto.getMessageType());
+		JsonMessage msg = proc.apply(dto.getBody());
+		return msg.toJson(dto.getId());
 	}
 
 	@OnError

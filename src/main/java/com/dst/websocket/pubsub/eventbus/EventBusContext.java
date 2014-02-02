@@ -1,4 +1,4 @@
-package com.dst.eventbus;
+package com.dst.websocket.pubsub.eventbus;
 
 import com.google.common.eventbus.EventBus;
 import org.apache.log4j.Logger;

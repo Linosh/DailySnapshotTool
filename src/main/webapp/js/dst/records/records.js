@@ -55,7 +55,7 @@ $(document).ready(function () {
 
 			initJquerySelectors(rec);
 
-			WsRecordsUtils.subsRecTypesUpds(function(types) {
+			RecordUtils.getRecTypes(function(types) {
 				rec.typesField.autocomplete({
 					source: types
 				});
