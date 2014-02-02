@@ -4,8 +4,13 @@ package com.dst.orm.entities;
  * Project: DailySnapshotTool
  * Author: Yermiichuk Dmitrii
  * Date: 2/2/14
+ *
+ * Will be JPA entity for CRUD operations on records.
  */
 public class Record {
+
+	//TODO: ID needs to be defined...
+
 	private String recType;
 	private String recMsg;
 	private String recTime;

@@ -1,8 +1,8 @@
 package com.dst.websocket.messages.record;
 
 import com.dst.utils.JsonUtils;
-import com.dst.websocket.messages.MessageType;
 import com.dst.websocket.messages.AbstractJsonMessage;
+import com.dst.websocket.messages.MessageType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +11,9 @@ import java.util.List;
  * Project: DailySnapshotTool
  * Author: Yermiichuk Dmitrii
  * Date: 2/2/14
+ *
+ * Container for record types entries. Will extended in future for keeping more complex structure.
+ * thread safe stuff
  */
 public class RecordTypesMessage extends AbstractJsonMessage<RecordTypesMessage> {
 
@@ -21,7 +24,7 @@ public class RecordTypesMessage extends AbstractJsonMessage<RecordTypesMessage> 
 	}
 
 	public RecordTypesMessage(List<String> types) {
-		this.recTypes = types;
+		this.recTypes = new ArrayList(types);
 	}
 
 	@Override

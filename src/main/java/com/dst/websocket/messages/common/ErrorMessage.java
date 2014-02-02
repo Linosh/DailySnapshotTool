@@ -1,12 +1,14 @@
 package com.dst.websocket.messages.common;
 
-import com.dst.websocket.messages.MessageType;
 import com.dst.websocket.messages.AbstractJsonMessage;
+import com.dst.websocket.messages.MessageType;
 
 /**
  * Project: DailySnapshotTool
  * Author: Yermiichuk Dmitrii
  * Date: 2/2/14
+ *
+ * Defines simple error message on any GET/POST-like request with simple text inside
  */
 public class ErrorMessage extends AbstractJsonMessage<ErrorMessage> {
 

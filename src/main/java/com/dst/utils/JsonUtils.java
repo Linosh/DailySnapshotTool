@@ -15,7 +15,6 @@ import java.util.Map;
  * Date: 2/2/14
  *
  * Currently it's kinda facade for GSON in case of change it to smth else
- * No guaranty that Gson is thread safe that's why use new instance each time
  */
 public class JsonUtils {
 
@@ -28,9 +27,17 @@ public class JsonUtils {
 	 */
 	private static Gson PARSER = new Gson();
 
+	/**
+	 * Util class should have private constructor
+	 */
 	private JsonUtils() {
 	}
 
+	/**
+	 * Converts JSON string to DTO object
+	 * @param json message string
+	 * @return DTO object
+	 */
 	public static MessageDTO fromJson(String json) {
 		Map<String, String> map = new HashMap();
 		map = PARSER.fromJson(json, map.getClass());
@@ -40,7 +47,11 @@ public class JsonUtils {
 		return new MessageDTO(messageType, body, id);
 	}
 
-
+	/**
+	 * Converts DTO to JSON message
+	 * @param msg DTO object
+	 * @return JSON string
+	 */
 	public static String toJson(MessageDTO msg) {
 		JsonObject jsonObject = new JsonObject();
 		jsonObject.addProperty(MSG_TYPE_PARAM, msg.getMessageType().getTypeName());

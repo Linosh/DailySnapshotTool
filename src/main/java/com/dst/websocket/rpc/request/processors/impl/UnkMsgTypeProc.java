@@ -8,6 +8,8 @@ import com.dst.websocket.rpc.request.processors.JsonMsgProcessor;
  * Project: DailySnapshotTool
  * Author: Yermiichuk Dmitrii
  * Date: 2/2/14
+ *
+ * Returns in case of unknown message type
  */
 public class UnkMsgTypeProc implements JsonMsgProcessor {
 

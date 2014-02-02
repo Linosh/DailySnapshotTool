@@ -13,6 +13,7 @@ public class RemRecMsgProc implements JsonMsgProcessor {
 
 	@Override
 	public JsonMessage apply(String msgBody) {
+		//TODO: removing record
 		return new SuccessMessage();
 	}
 }

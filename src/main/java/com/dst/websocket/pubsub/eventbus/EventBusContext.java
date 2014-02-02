@@ -7,10 +7,14 @@ import org.apache.log4j.Logger;
  * Project: DailySnapshotTool
  * Author: Yermiichuk Dmitrii
  * Date: 1/29/14
+ *
+ * Context for hiding even bus impl. Currently based on goole.guava EventBus.
+ * Using for sending messages to server using declared listeners within end points
  */
 public class EventBusContext {
 	private static final Logger LOGGER = Logger.getLogger(EventBusContext.class);
 
+	//considered as util
 	private EventBusContext() {}
 
 	private static final EventBus EVENT_BUS = new EventBus("DAILY_SNAPSHOT_TOOL");

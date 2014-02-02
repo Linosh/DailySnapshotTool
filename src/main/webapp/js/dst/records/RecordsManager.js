@@ -7,20 +7,27 @@ $(document).ready(function () {
 
 	// add link's click listener
 	addRecLink.click(function () {
+
+		// initing new record
 		var record = new Record();
 
 		var lastElem = $('div.record').last();
 
+		// adding html presentation of record to records container
 		if (lastElem.length == 0) {
 			records.prepend(record.html());
 		} else {
 			lastElem.after(record.html());
 		}
 
+		// initing links listeners
 		record.initListeners();
+
+		// stopping further event processing
 		return false;
 	});
 
+	// kinda record builder. Based on JRender templates
 	function Record() {
 		var RecordBase = {
 			toJson: function () {
@@ -45,6 +52,7 @@ $(document).ready(function () {
 			remLink: Global.createUUID()
 		});
 
+		// gets template and apply data like json object
 		this.html = function () {
 			var newRecTmpl = $.templates('#newRecord');
 			var newRec = newRecTmpl.render(rec.toJson());

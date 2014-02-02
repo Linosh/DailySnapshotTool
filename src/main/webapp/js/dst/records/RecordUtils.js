@@ -1,3 +1,4 @@
+// keeps message types for request objects
 MessageTypes = {
 	NONE: "none",
 
@@ -9,12 +10,14 @@ MessageTypes = {
 	ERROR: "error"
 }
 
+// keeps extendable base requests objects
 RequestObjects = {
 	GetRecordTypes: {type: MessageTypes.RECORD_GET_TYPES},
 	SaveRecord: {type: MessageTypes.RECORD_SAVE},
 	RemoveRecord: {type: MessageTypes.RECORD_REMOVE}
 }
 
+// keeps utils to work with records (saving/removing/updating etc...)
 RecordUtils = {
 
 	recordsRPC: new WsRPC(Global.getSpecificEndPoint("records")),

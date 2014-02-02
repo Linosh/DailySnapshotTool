@@ -14,7 +14,7 @@
 	<script src="js/dst/utils/GlobalUtils.js"></script>
 	<script src="js/dst/utils/RPC.js"></script>
 	<script src="js/dst/records/RecordUtils.js"></script>
-	<script src="js/dst/records/records.js"></script>
+	<script src="js/dst/records/RecordsManager.js"></script>
 
 </head>
 <body>

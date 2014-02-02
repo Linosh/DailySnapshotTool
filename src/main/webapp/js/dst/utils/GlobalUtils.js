@@ -1,3 +1,5 @@
+// Keeps general utils for generating unique message ids and parsing json messages
+// Also keeps connection string
 Global = {
 	WS_URL: "ws://localhost:8080/ws/",
 

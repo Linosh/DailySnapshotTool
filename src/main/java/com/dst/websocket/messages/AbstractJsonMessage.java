@@ -25,7 +25,18 @@ public abstract class AbstractJsonMessage<T extends AbstractJsonMessage> impleme
 		return parseBody(msg.getBody());
 	}
 
+	/**
+	 * Defines message type for income/outcome message
+	 */
 	protected abstract MessageType getType();
+
+	/**
+	 * Defines message body for outcome message
+	 */
 	protected abstract String getBody();
+
+	/**
+	 * Parsse message body for income message
+	 */
 	protected abstract T parseBody(String body);
 }
