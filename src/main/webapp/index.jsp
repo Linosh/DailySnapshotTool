@@ -18,7 +18,7 @@
 
 </head>
 <body>
-<jsp:include page="templates/records/editableRecord.jsp"/>
+<jsp:include page="templates/templates.jsp"/>
 <header>
 	<div id="title">
 		<div>Daily Snapshot Tool</div>
